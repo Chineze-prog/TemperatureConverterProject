@@ -12,8 +12,11 @@ public class TemperatureConverter{
     // GUI Elements
     private JFrame frame;
     private JPanel panel;
-    private JButton celsiusButton;
-    private JButton fahrenheitButton;
+    private JButton convertCtoFButton;
+    private JButton convertFtoCButton;
+    private JLabel celciusLabel;
+    private JLabel fahrenheitLabel;
+    
     
     /**
      * Constructor for objects of class TemperatureConverter
@@ -35,8 +38,9 @@ public class TemperatureConverter{
        
         frame = new JFrame();
         panel = new JPanel();
-        JButton celsiusButton = new JButton("Celsius");
-        JButton fahrenheitButton = new JButton("fahrenheit");
+
+        convertCtoFButton = new JButton("Convert C to F");
+        convertFtoCButton = new JButton("Convert F to C");
         
         panel.setBorder(BorderFactory.createEmptyBorder(200, 200, 200, 200));
         panel.setLayout(new GridLayout(0, 1));
