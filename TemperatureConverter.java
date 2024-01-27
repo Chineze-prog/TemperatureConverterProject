@@ -1,12 +1,12 @@
-import java.awt.event.*;
+//import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
 
 /**
  * Write a description of class TemperatureConverter here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Chineze Obi
+ * @version v1
  */
 public class TemperatureConverter{
     // GUI Elements
@@ -14,7 +14,7 @@ public class TemperatureConverter{
     private JPanel panel;
     private JButton convertCtoFButton;
     private JButton convertFtoCButton;
-    private JLabel celciusLabel;
+    private JLabel celsiusLabel;
     private JLabel fahrenheitLabel;
     
     
@@ -41,17 +41,24 @@ public class TemperatureConverter{
 
         convertCtoFButton = new JButton("Convert C to F");
         convertFtoCButton = new JButton("Convert F to C");
-        
-        panel.setBorder(BorderFactory.createEmptyBorder(200, 200, 200, 200));
+
+        celsiusLabel = new JLabel("Celsius:");
+        fahrenheitLabel = new JLabel("Fahrenheit:");
+
+        panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
         panel.setLayout(new GridLayout(0, 1));
         
+        panel.add(convertCtoFButton);
+        panel.add(convertFtoCButton);
+        panel.add(celsiusLabel);
+        panel.add(fahrenheitLabel);
+
         frame.add(panel, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Temperature Converter by @Chineze-prog");
         frame.pack();
+
         frame.setVisible(true);
-        
-        
     }
 
     public static void main(String[] args){
