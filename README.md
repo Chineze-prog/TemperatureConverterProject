@@ -1,3 +1,6 @@
-# Projects
+# Temperature Converter Project
 
-I am begining with small projects to increase my skills in java and I am learning Python so I will also add some beginner python projects as well.
+This is a temperature converter made using Java. 
+It takes user input from a text box and converts it to its equivalent Celsius or Fahrenheit value.
+
+
