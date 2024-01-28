@@ -43,28 +43,19 @@ public class TemperatureConverter{
         panel = new JPanel();
 
         convertCtoFButton = new JButton("Convert C to F");
-        //adding listener
-        convertCtoFButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt){
-                //convert C to F
-            }
-        });
-
         convertFtoCButton = new JButton("Convert F to C");
-        convertFtoCButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt){
-                //convert F to C
-            }
-        });
+        //adding listener
+        convertCtoFActionListener();
+        convertFtoCActionListener();      
 
         celsiusLabel = new JLabel("Celsius:");
-        celsiusLabel.setBounds(10, 20, 80, 25);
-        fahrenheitLabel = new JLabel("Fahrenheit:");
-        fahrenheitLabel.setBounds(10, 20, 80, 25);
-
         cTextField = new JTextField(20);
+        celsiusLabel.setBounds(10, 20, 80, 25);
         cTextField.setBounds(100, 20, 165, 25);
+
+        fahrenheitLabel = new JLabel("Fahrenheit:");
         fTextField = new JTextField(20);
+        fahrenheitLabel.setBounds(10, 20, 80, 25);
         cTextField.setBounds(100, 20, 165, 25);
         
         panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
@@ -91,5 +82,29 @@ public class TemperatureConverter{
 
     public static void main(String[] args){
         new TemperatureConverter();
+    }
+
+    //Accepts user input and Converts C to F and returns the value to the user
+    private void convertCtoFActionListener(){
+        convertCtoFButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt){
+                String input = cTextField.getText();
+                double cValue = Double.parseDouble(input);
+                double fValue = (cValue * 9 / 5) + 32;
+                fTextField.setText(String.valueOf(fValue));
+            }
+        });
+    }
+
+    //Accepts user input and Converts C to F and returns the value to the user
+    private void convertFtoCActionListener(){
+        convertFtoCButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt){
+                String input = fTextField.getText();
+                double fValue = Double.parseDouble(input);
+                double cValue = (fValue - 32) * 5 / 9;
+                cTextField.setText(String.valueOf(cValue));
+            }
+        });
     }
 }
